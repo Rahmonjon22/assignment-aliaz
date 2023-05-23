@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0px;
 }
 
 body {
@@ -9,48 +11,125 @@ body .first-assignment {
   height: 50vh;
   background-color: white;
 }
-body .first-assignment .container .container-gallery .image {
-  position: relative;
-  width: 400px;
+body .first-assignment .container {
+  width: 100%;
+  height: 100%;
 }
-body .first-assignment .container .container-gallery .image .image-img {
+body .first-assignment .container .container-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .first-assignment .container .container-gallery .image-card {
+  position: relative;
+  width: 300px;
+  margin: 10px;
+}
+body .first-assignment .container .container-gallery .image-card .image-img {
   display: block;
   width: 100%;
 }
-body .first-assignment .container .container-gallery .image .image-overlay {
+body .first-assignment .container .container-gallery .image-card .image-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  opacity: 1;
-  transition: opacity 0.25s;
+  opacity: 0;
+  transition: opacity 1s;
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-left: 15px;
   font-family: "Quicksand", sans-serif;
 }
-body .first-assignment .container .container-gallery .image .image-overlay .image-title {
+body .first-assignment .container .container-gallery .image-card .image-overlay .image-title {
+  opacity: 1;
   font-size: 2em;
   font-weight: bold;
 }
-body .first-assignment .container .container-gallery .image .image-overlay .image-description {
+body .first-assignment .container .container-gallery .image-card .image-overlay .image-description {
+  opacity: 0;
   font-size: 1.25em;
   margin-top: 0.25em;
 }
-body .first-assignment .container .container-gallery .image .image-overlay:hover {
+body .first-assignment .container .container-gallery .image-card .image-overlay:hover {
   opacity: 1;
 }
-body .first-assignment .container .container-gallery .image .image-overlay > * {
-  transform: translateY(40px);
-  transition: transform 0.25s;
+body .first-assignment .container .container-gallery .image-card .image-overlay:hover .image-description {
+  opacity: 1;
 }
-body .first-assignment .container .container-gallery .image .image-overlay:hover > * {
+body .first-assignment .container .container-gallery .image-card .image-overlay > * {
+  transform: translateY(80px);
+  transition: transform 1s;
+}
+body .first-assignment .container .container-gallery .image-card .image-overlay:hover > * {
   transform: translateY(0);
-  transition: transform 0.25s;
+  transition: transform 1s;
+}
+
+.second-assignment {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.second-assignment .container {
+  display: flex;
+}
+.second-assignment .container .card {
+  height: 500px;
+  margin: 50px;
+  overflow: hidden;
+}
+.second-assignment .container .card img {
+  height: 500px;
+  width: 350px;
+  transition: 0.5s;
+}
+.second-assignment .container .card .intro {
+  width: 400px;
+  height: 70px;
+  padding: 6px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 440px;
+  color: white;
+  transition: 1s;
+}
+.second-assignment .container .card .intro .title {
+  margin: 10px;
+  font-size: 40px;
+  color: black;
+}
+.second-assignment .container .card .intro p {
+  font-size: 20px;
+  margin: 10px;
+  visibility: hidden;
+  opacity: 0;
+}
+.second-assignment .container .card:hover {
+  cursor: pointer;
+}
+.second-assignment .container .card:hover img {
+  transform: scale(1.1) rotate(-3deg);
+}
+.second-assignment .container .card:hover .intro {
+  height: 200px;
+  bottom: 440px;
+  background: rgba(27, 27, 27, 0.5);
+}
+.second-assignment .container .card:hover .intro .title {
+  color: white;
+}
+.second-assignment .container .card:hover .intro p {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */
