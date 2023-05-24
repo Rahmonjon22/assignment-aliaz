@@ -50,19 +50,14 @@ body .first-assignment .container .container-gallery .image-card .image-overlay 
   align-items: flex-start;
   justify-content: flex-end;
   padding-left: 15px;
-  font-family: 'Quicksand', sans-serif;
 }
 body .first-assignment .container .container-gallery .image-card .image-overlay .image-title {
   opacity: 1;
-  font-size: 2em;
-  font-weight: bold;
   color: black;
 }
 body .first-assignment .container .container-gallery .image-card .image-overlay .image-description {
   opacity: 0;
-  font-size: 1.25em;
   margin-top: 0.25em;
-  padding-bottom: 15px;
 }
 body .first-assignment .container .container-gallery .image-card .image-overlay:hover {
   background: rgba(0, 0, 0, 0.6);
@@ -74,6 +69,7 @@ body .first-assignment .container .container-gallery .image-card .image-overlay:
 }
 body .first-assignment .container .container-gallery .image-card .image-overlay:hover .image-description {
   opacity: 1;
+  padding-bottom: 15px;
 }
 body .first-assignment .container .container-gallery .image-card .image-overlay > * {
   transform: translateY(80px);
