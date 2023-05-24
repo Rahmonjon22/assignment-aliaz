@@ -6,128 +6,155 @@
 
 body {
   background-color: antiquewhite;
+  /* .first-assignment {
+      height: 50vh;
+      background-color: white;
+
+      .container {
+        width: 100%;
+        height: 100%;
+
+        .container-gallery {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .image-card {
+            position: relative;
+            width: 300px;
+            margin: 10px;
+
+            .image-img {
+              display: block;
+              width: 100%;
+            }
+
+
+            .image-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.6);
+              opacity: 0;
+              transition: opacity 1s;
+              color: white;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-end;
+              padding-left: 15px;
+              font-family: 'Quicksand', sans-serif;
+
+              .image-title {
+                opacity: 1;
+                font-size: 2em;
+                font-weight: bold;
+
+              }
+
+              .image-description {
+                opacity: 0;
+                font-size: 1.25em;
+                margin-top: 0.25em;
+              }
+
+              &:hover {
+                opacity: 1;
+
+                .image-description {
+                  opacity: 1;
+                }
+
+              }
+            }
+            .image-overlay > * {
+              transform: translateY(80px);
+              transition: transform 1s;
+            }
+            .image-overlay:hover > * {
+              transform: translateY(0);
+              transition: transform 1s;
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+
+    */
 }
-body .first-assignment {
-  height: 50vh;
-  background-color: white;
-}
-body .first-assignment .container {
+body .second-assignment {
+  height: 100vh;
   width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-body .first-assignment .container .container-gallery {
+body .second-assignment .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-body .first-assignment .container .container-gallery .image-card {
-  position: relative;
-  width: 300px;
-  margin: 10px;
-}
-body .first-assignment .container .container-gallery .image-card .image-img {
-  display: block;
-  width: 100%;
-}
-body .first-assignment .container .container-gallery .image-card .image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  transition: opacity 1s;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding-left: 15px;
-  font-family: "Quicksand", sans-serif;
-}
-body .first-assignment .container .container-gallery .image-card .image-overlay .image-title {
-  opacity: 1;
-  font-size: 2em;
-  font-weight: bold;
-}
-body .first-assignment .container .container-gallery .image-card .image-overlay .image-description {
-  opacity: 0;
-  font-size: 1.25em;
-  margin-top: 0.25em;
-}
-body .first-assignment .container .container-gallery .image-card .image-overlay:hover {
-  opacity: 1;
-}
-body .first-assignment .container .container-gallery .image-card .image-overlay:hover .image-description {
-  opacity: 1;
-}
-body .first-assignment .container .container-gallery .image-card .image-overlay > * {
-  transform: translateY(80px);
-  transition: transform 1s;
-}
-body .first-assignment .container .container-gallery .image-card .image-overlay:hover > * {
-  transform: translateY(0);
-  transition: transform 1s;
-}
-
-.second-assignment {
-  height: 50vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.second-assignment .container {
-  display: flex;
-}
-.second-assignment .container .card {
+body .second-assignment .container .card {
   height: 500px;
-  margin: 50px;
+  width: 350px;
+  margin: 15px;
   overflow: hidden;
+  position: relative;
 }
-.second-assignment .container .card img {
+body .second-assignment .container .card img {
   height: 500px;
   width: 350px;
   transition: 0.5s;
 }
-.second-assignment .container .card .intro {
-  width: 400px;
-  height: 70px;
+body .second-assignment .container .card .intro {
+  width: 350px;
+  height: 500px;
   padding: 6px;
   box-sizing: border-box;
   position: absolute;
-  bottom: 440px;
+  bottom: -150px;
   color: white;
   transition: 1s;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
 }
-.second-assignment .container .card .intro .title {
+body .second-assignment .container .card .intro .title {
   margin: 10px;
   font-size: 40px;
   color: black;
 }
-.second-assignment .container .card .intro p {
+body .second-assignment .container .card .intro p {
   font-size: 20px;
   margin: 10px;
   visibility: hidden;
   opacity: 0;
 }
-.second-assignment .container .card:hover {
+body .second-assignment .container .card .second-intro {
+  height: 100%;
+}
+body .second-assignment .container .card:hover {
   cursor: pointer;
 }
-.second-assignment .container .card:hover img {
-  transform: scale(1.1) rotate(-3deg);
+body .second-assignment .container .card:hover img {
+  transform: scale(1.1) rotate(-1deg);
 }
-.second-assignment .container .card:hover .intro {
-  height: 200px;
-  bottom: 440px;
+body .second-assignment .container .card:hover .intro {
+  bottom: 0px;
   background: rgba(27, 27, 27, 0.5);
 }
-.second-assignment .container .card:hover .intro .title {
+body .second-assignment .container .card:hover .intro .title {
   color: white;
 }
-.second-assignment .container .card:hover .intro p {
+body .second-assignment .container .card:hover .intro p {
   opacity: 1;
   visibility: visible;
 }
