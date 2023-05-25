@@ -1,164 +1,246 @@
-* {
+@font-face {
+  font-family: 'Roboto Thin';
+  src: url("./fonts/Roboto-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url("./fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url("./fonts/Roboto-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0px;
   padding: 0px;
 }
 
-body {
-  /* Body starts here */
+/* Body starts here */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
   background-color: antiquewhite;
 
+  h1, h2, p, input {
+    font-family: 'Roboto Medium';
+    line-height: 120%;
+  }
+
+  @media screen and (max-width: 1250px) {
+    h1, h2, p, input {
+      font-family: 'Roboto Regular';
+    }
+  }
+  @media screen and (max-width: 600px) {
+    h1, h2, p, input {
+      font-family: 'Roboto Thin';
+    }
+  }
+
+
   /* image to hover start here */
+
   .first-assignment {
-  display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 
 
-     .container {
-       width: 100%;
-       height: 100%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-       .container-gallery {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         flex-wrap: wrap;
+      .container-gallery {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
-         .image-card {
-           position: relative;
-           width: 300px;
-           margin: 10px;
+        .image-card {
+          position: relative;
+          width: 300px;
+          margin: 10px;
 
-           .image-img {
-             display: block;
-             width: 100%;
-           }
-           .image-overlay {
-             cursor: pointer;
-             position: absolute;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             -webkit-transition: width 2s;
-             transition: 2s;
-             color: white;
-             display: flex;
-             flex-direction: column;
-             align-items: flex-start;
-             justify-content: flex-end;
-             padding-left: 15px;
+          .image-img {
+            display: block;
+            width: 100%;
+          }
+
+          .image-overlay {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: width 2s;
+            transition: 2s;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding-left: 15px;
 
 
-             .image-title {
-               opacity: 1;
-               color: black;
-               font-size: 2em;
-             }
+            .image-title {
+              opacity: 1;
+              color: black;
+              font-size: 2em;
+            }
 
-             .image-description {
-               opacity: 0;
-               font-size: 1.25em;
-               margin-top: 0.25em;
+            .image-description {
+              opacity: 0;
+              font-size: 1.25em;
+              margin-top: 0.25em;
 
-             }
+            }
 
-             &:hover {
-               background: rgba(0, 0, 0, 0.6);
-               transition-delay: 250ms;
-               opacity: 1;
-               .image-title{
-                 color: white;
-               }
+            &:hover {
+              background: rgba(0, 0, 0, 0.6);
+              transition-delay: 250ms;
+              opacity: 1;
 
-               .image-description {
-                 opacity: 1;
-                 padding-bottom: 15px;
-               }
+              .image-title {
+                color: white;
+              }
 
-             }
-           }
-           .image-overlay > * {
-             transform: translateY(80px);
-             transition: transform 1s;
-           }
-           .image-overlay:hover > * {
-             transform: translateY(0);
-             transition: transform 1s;
-           }
+              .image-description {
+                opacity: 1;
+                padding-bottom: 15px;
+              }
 
-         }
-       }
-     }
-   }
+            }
+          }
+
+          .image-overlay > * {
+            transform: translateY(80px);
+            transition: transform 1s;
+          }
+
+          .image-overlay:hover > * {
+            transform: translateY(0);
+            transition: transform 1s;
+          }
+
+        }
+      }
+    }
+  }
+
   /* image to hover ends here */
 
   /* Swiper starts here */
-  .container {
+
+  .swiper-container {
     height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #e3f2fd;
-  
+
     .testimonial {
       position: relative;
       max-width: 1400px;
       width: 100%;
       padding: 50px 0;
       overflow: hidden;
-  
+
       .testimonial-content {
-        width: 600px;
-  
+
         .slide {
           display: flex;
           align-items: center;
           justify-content: space-around;
           height: 100%;
-  
-  
-          .image {
-            height: 170px;
-            width: 170px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-right: 45px;
-          }
-  
-          .swiper-text-container {
+
+          .swiper-inside-container {
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: column;
-            gap: 15px;
-  
-            .swiper-title {
-              font-size: 15px;
-              color: darkred;
+            justify-content: space-around;
+            max-width: 80%;
+
+            .image {
+              height: 170px;
+              width: 170px;
+              object-fit: cover;
+              border-radius: 50%;
+              margin-right: 45px;
             }
-  
-            .swiper-text {
-              font-size: 20px;
+
+            .swiper-text-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              gap: 15px;
+
+              .swiper-title {
+                font-size: 15px;
+                color: darkred;
+                text-align: center;
+              }
+
+              .swiper-text {
+                font-size: 20px;
+                text-align: center;
+                font-weight: normal;
+              }
+
+              .swiper-user {
+                span{
+                  font-weight: bold;
+                }
+                font-size: 18px;
+                text-align: center;
+                font-weight: normal;
+
+              }
+
             }
-  
-            .swiper-user {
-              font-size: 18px;
-            }
-  
           }
-  
+
+          @media screen and (max-width: 750px) {
+            .swiper-inside-container {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+
+              .image {
+                margin-right: 0px;
+                margin-bottom: 25px;
+              }
+
+            }
+          }
         }
       }
-  
-  
+
+
     }
-  
+
     /* swiper button css */
     .nav-btn {
       height: 40px;
@@ -167,29 +249,31 @@ body {
       transform: translateY(30px);
       background-color: rgba(0, 0, 0, 0.1);
       transition: 0.2s;
-  
+
       &:hover {
         background-color: rgba(0, 0, 0, 0.2);
       }
     }
-  
+
     .nav-btn::after,
     .nav-btn::before {
       font-size: 20px;
       color: #fff;
     }
-  
+
     .swiper-pagination-bullet {
+      display: none;
       background-color: rgba(0, 0, 0, 0.8);
     }
-  
+
     .swiper-pagination-bullet-active {
       background-color: #4070f4;
+      display: none;
     }
-  
+
   }
-  
-  
+
+
   @media screen and (max-width: 768px) {
     .slide p {
       padding: 0 20px;
@@ -198,10 +282,10 @@ body {
       display: none;
     }
   }
-  
+
 
   /* swiperjs ends here */
 
   /* Body ends here */
- }
+}
 
